@@ -16,13 +16,13 @@ class ProductController extends Controller
 
     public function index()
     {
-     $produtos = \App\Models\Product::all();
+     $produtos = \App\Models\Product::join('categories', 'products.category_id', '=', 'categories.id')->select('products.*', 'categories.name AS category_name')->get();
      return view('produtos', ['produtos' => $produtos] );
     } 
 
    public function listar()
    {
-    $produtos = \App\Models\Product::all();
+     $produtos = \App\Models\Product::join('categories', 'products.category_id', '=', 'categories.id')->select('products.*', 'categories.name AS category_name')->get();
     return view('produtos', ['produtos' => $produtos] );
    }
 
