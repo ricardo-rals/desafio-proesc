@@ -28,6 +28,7 @@ Route::get('/categorias', 'CategoryController@index');
 Route::get('/categorias/listar', 'CategoryController@listar');
 Route::get('/categorias/cadastrar', 'CategoryController@create');
 Route::get('/categorias/{id}/edit', 'CategoryController@edit');
+Route::put('/categorias/{id}/', 'CategoryController@update');
 Route::post('/categorias/listar', 'CategoryController@store');
 Route::delete('/categorias/{id}/delete', 'CategoryController@destroy');
 
